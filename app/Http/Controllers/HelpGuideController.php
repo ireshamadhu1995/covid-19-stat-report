@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\HelpGuide\CreateHelpGuideRequest;
+use App\Http\Requests\HelpGuide\UpdateHelpGuideRequest;
 use App\Helpers\APIHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -112,9 +113,40 @@ class HelpGuideController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateHelpGuideRequest $request, $id)
     {
-        //
+        try {
+            $user = Auth::user();
+            $helpGuide = HelpGuide::find($id);
+            if(!$helpGuide)
+                return APIHelper::makeAPIResponse(false, "Help Guide not found", null, 400);
+
+            else{
+                if($helpGuide->user_id != $user->id)
+                    return APIHelper::makeAPIResponse(false, "Access forbidden", null, 403);
+
+                else{
+                    $helpGuide->topic = $request->topic;
+                    $helpGuide->user_id = $user->id;
+                    $helpGuide->description = $request->description;
+                    $helpGuide->link = $request->link;
+                    $helpGuide->save();
+
+                    if ($request->images){
+                        FileHelper::saveImages($request->images,$helpGuide,'images/help-guide');
+                        } 
+                    return APIHelper::makeAPIResponse(true, "Help Guide Updated Successfully", ['helpGuide' =>$helpGuide,'image_data' => $helpGuide->images()], 200); 
+
+                }
+                
+
+            }
+
+
+        } catch (\Exception $e) {
+            report($e);
+            return APIHelper::makeAPIResponse(false, "Internal server error", null, 500);
+        }
     }
 
     /**
