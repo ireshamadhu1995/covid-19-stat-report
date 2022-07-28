@@ -4,22 +4,32 @@
             class="sidebar-close d-block d-lg-none">
             <i class="far fa-times-circle"></i>
         </div>
-        <div class="logo-wrap">
-            <img src="{{asset('images/dashboard_image.png')}}" alt="logo" />
-        </div>
+       
         <div class="link-item-wrap">
-            <a href="{{route('help-guide.index')}}" class="item-link {{(request()->is('page')) ? 'active' : ''}}">
+            <!-- <a href="#" class="item-link">
                 <i class="fas fa-home"></i>
-                <span>Pages</span>
+                <span><b>HELP & GUIDES</b></span>
             </a>
-
-
-{{--            <a href="{{route('content.index')}}" class="item-link {{(request()->is('content')) ? 'active' : ''}}">--}}
-{{--                <i class="fas fa-umbrella-beach"></i>--}}
-{{--                <span>Contents</span>--}}
-{{--            </a>--}}
-
-
+</br> -->
+        </div>
+        <div class="logo-wrap">
+            <img src="{{asset('images/dashboard_image1.png')}}" alt="logo" />
+        </div>
+        </br>
+        <div class="logo-wrap">
+            <img src="{{asset('images/dashboard_image2.png')}}" alt="logo" />
+        </div>
+        </br>
+        <div class="logo-wrap">
+            <img src="{{asset('images/dashboard_image3.png')}}" alt="logo" />
+        </div>
+        </br>
+        <div class="logo-wrap">
+            <img src="{{asset('images/dashboard_image4.png')}}" alt="logo" />
+        </div>
+        </br>
+        <div class="logo-wrap">
+            <img src="{{asset('images/dashboard_image5.png')}}" alt="logo" />
         </div>
     </div>
 </div>
