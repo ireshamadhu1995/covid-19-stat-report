@@ -1,0 +1,161 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.main-content{
+    padding: 30px;
+}
+.page-heading{
+    h1{
+        color: #111B3B;
+        font-size: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        @media (max-width: 767.98px) {
+            font-size: 22px;
+        }
+    }
+}
+.table-wrap {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #e7eaf0;
+    padding: 20px;
+    .table-btn{
+        color: #fff;
+        font-size: 12px;
+        padding: 2px 10px;
+        border-radius: 0;
+        &:focus{
+            box-shadow: none;
+        }
+        &.view-btn{
+            background: #12a8b9;
+        }
+        &.edit-btn{
+            background: #111B3B;
+        }
+    }
+    table {
+        border-bottom: none !important;
+        padding: 15px 0;
+        thead {
+            tr {
+                th {
+                    border-bottom: none;
+                    background: #6a6a6a;
+                    color: #ffff;
+                    font-weight: 400;
+                    font-size: 12px;
+                    padding: 10px 15px;
+                    text-align: center;
+                    vertical-align: middle;
+                    &:first-child {
+                        border-top-left-radius: 10px;
+                        @media (max-width: 599.98px) {
+                            border-top-left-radius: 0;
+                        }
+                    }
+                    &:last-child {
+                        border-top-right-radius: 10px;
+                        @media (max-width: 599.98px) {
+                            border-top-right-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        tbody {
+            tr {
+                background-color: #f6f6f7;
+                &:nth-of-type(odd) {
+                    background-color: #ededee;
+                }
+                td {
+                    border-bottom: none !important;
+                    padding: 15px;
+                    text-align: center;
+                    color: #6a6a6a;
+                    font-size: 13px;
+                    vertical-align: middle;
+                    &:first-child {
+                        border-left: 10px solid #ffffff;
+                        @media (max-width: 599.98px) {
+                            border-left: none;
+                        }
+                    }
+                    &:last-child {
+                        border-right: 10px solid #ffffff;
+                        @media (max-width: 599.98px) {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    background: #fff;
+    box-shadow: 0 3px 10px #e7eaf0;
+    color: #111B3B;
+    padding: 2px 8px;
+    line-height: normal;
+    margin-left: 5px;
+    border: none !important;
+    transition: .5s;
+    font-size: 14px;
+    &.current{
+        background: #12a8b9;
+        border: none;
+        color: #ffffff !important;
+    }
+    &:hover{
+        background: #12a8b9 !important;
+        border: none !important;
+    }
+    &.previous, &.next{
+        box-shadow: none !important;
+    }
+}
+.dataTables_filter, .dataTables_length, .dataTables_info{
+    font-size: 14px;
+    color: #111B3B !important;
+}
+.page-input{
+    background: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 35px;
+    box-shadow: 0 1px 4px #e7eaf0;
+    color: #111B3B;
+    font-size: 14px;
+    &:focus{
+        box-shadow: 0 1px 4px #12a8b92e;
+        background: #ffffff;
+    }
+}
+label{
+    font-weight: 500;
+    color: #111B3B;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #12a8b9 !important;
+    border-color: #12a8b9 !important;
+    font-size: 15px;
+    padding: 7px 20px;
+    box-shadow: none !important;
+    &:hover{
+        color: #12a8b9 !important;
+        background-color: #ffffff !important;
+        border-color: #12a8b9 !important;
+    }
+    &:focus, &:active{
+        box-shadow: none;
+    }
+}
+.text-right{
+    text-align: right;
+}

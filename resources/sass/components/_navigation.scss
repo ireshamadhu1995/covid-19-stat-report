@@ -1,0 +1,63 @@
+.nav-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    background: #ffffff;
+    padding: 10px 25px;
+    @media (max-width: 991.98px) {
+        justify-content: space-between;
+    }
+    &-inner{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 50%;
+        .nav-menu{
+            font-size: 20px;
+            color: #111B3B;
+        }
+        .logo-wrap{
+            margin-left: 10px;
+            img{
+                width: 100px;
+            }
+        }
+    }
+    .dropdown{
+        .btn{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0;
+            &:after{
+                display: none;
+            }
+            &:focus{
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+        .profile{
+            &-icon{
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background: #111B3B;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            &-name{
+                color: #111B3B;
+                font-size: 15px;
+                font-weight: 500;
+                margin-right: 10px;
+            }
+        }
+    }
+}
