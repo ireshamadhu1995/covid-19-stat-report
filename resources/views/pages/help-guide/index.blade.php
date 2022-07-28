@@ -20,13 +20,13 @@
 
                 <div class="table-wrap mt-5">
                     <div class="table-responsive">
-                        <table class="table" id="pages-table">
+                        <table class="table" id="help-guides-table">
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Page Type</th>
-                                <th>Title</th>
+                                <th>Topic</th>
+                                <th>Link</th>
+                                <th>Description</th>
                                 <th>Created At</th>
                                 <th>Actions</th>
                             </tr>
@@ -44,9 +44,9 @@
         </div>
     </div>
 
-    <!-- <script>
+    <script>
         $(document).ready(function () {
-            $('#pages-table').DataTable ({
+            $('#help-guides-table').DataTable ({
                 "ordering": false,
                 language: {
                     searchPlaceholder: "Search records"
@@ -56,12 +56,12 @@
                 ],
                 processing: true,
                 serverSide: true,
-                ajax :'{!! url('/load-pages') !!}',
+                ajax :'{!! url('/load-help-guide') !!}',
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'page_type.name', name: 'page_type.name'},
-                    {data: 'title', name: 'title'},
+                    {data: 'topic', name: 'topic'},
+                    {data: 'link', name: 'link'},
+                    {data: 'description', name: 'description'},
                     {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action'},
                 ]
@@ -69,5 +69,5 @@
         });
 
 
-    </script> -->
+    </script>
 @endsection

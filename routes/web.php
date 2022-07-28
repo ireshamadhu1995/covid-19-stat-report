@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelpGuideController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +27,9 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('/help-guide',HelpGuideController::class);
+    Route::get('/load-help-guide',[HelpGuideController::class,'loadOwnHelpGuides']);
+    Route::delete('/image/{id}', [ImageController::class,'deleteImage'])->name('image.destroy');
+
+    Route::get('/logout', [HomeController::class,'logout'])->name('logout');
    
 });

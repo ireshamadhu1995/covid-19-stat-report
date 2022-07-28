@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHelpGuidesTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateHelpGuidesTable extends Migration
      */
     public function up()
     {
-        Schema::create('help_guides', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('topic');
-            $table->unsignedBigInteger('user_id');
-            $table->string('link');
-            $table->string('description');
+            $table->string('path');
+            $table->integer('imageable_id');
+            $table->string('imageable_type');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateHelpGuidesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('help_guides');
+        Schema::dropIfExists('images');
     }
 }

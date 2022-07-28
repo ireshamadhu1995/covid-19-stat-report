@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('help-guide');
+    }
+
+    public function logout(Request $request) {
+        auth()->logout();
+        return redirect('/');
+       
     }
 }
