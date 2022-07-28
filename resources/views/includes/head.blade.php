@@ -4,7 +4,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'SLTPB') }}</title>
+<title>{{ config('app.name', 'COVID-19') }}</title>
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
