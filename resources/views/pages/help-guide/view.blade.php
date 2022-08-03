@@ -7,7 +7,7 @@
             <div class="row g-0">
                 <div class="col-md-6 p-0">
                     <div class="page-heading">
-                        <h1>Edit - {{ $helpGuide->topic }}</h1>
+                        <h1>View - {{ $helpGuide->topic }}</h1>
                     </div>
                 </div>
                 <div class="col-md-6 p-0">

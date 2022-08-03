@@ -18,7 +18,7 @@ class CreateHelpGuidesTable extends Migration
             $table->string('topic');
             $table->unsignedBigInteger('user_id');
             $table->string('link');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

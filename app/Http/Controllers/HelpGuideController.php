@@ -23,14 +23,15 @@ class HelpGuideController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $help_guides = HelpGuide::with(['images','user'])->where('user_id', '=', $user->id)->get();
+        $help_guides = HelpGuide::where('user_id', $user->id)->with(['images','user'])->get();
 
         return view('pages.help-guide.index')->with(['help_guides'=> $help_guides]);
     }
 
     public function loadOwnHelpGuides()
     {
-        $help_guides = HelpGuide::orderBy('id', 'desc')->with(['images','user'])->get();
+        $user = Auth::user();
+        $help_guides = HelpGuide::where('user_id', $user->id)->orderBy('id', 'desc')->with(['images','user'])->get();
 
         return DataTables::of($help_guides)
             ->editColumn('created_at', function ($help_guides) {
